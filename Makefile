@@ -34,7 +34,7 @@ AUTHORS:
 
 .PHONY: build
 # Skip vet and format for faster local builds; run 'make test' separately if needed
-build: test
+build:
 	go run github.com/goreleaser/goreleaser@latest release --snapshot --skip=publish --clean
 
 .PHONY: release

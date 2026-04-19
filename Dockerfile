@@ -16,4 +16,6 @@ COPY --from=build /go/src/exporter_exporter/exporter_exporter /exporter_exporter
 # Expose the default port used by exporter_exporter
 EXPOSE 9999
 
+# Default config path can be overridden at runtime, e.g.:
+#   docker run -v /path/to/expexp.yaml:/etc/expexp.yaml <image> --config.file=/etc/expexp.yaml
 ENTRYPOINT [ "/exporter_exporter" ]

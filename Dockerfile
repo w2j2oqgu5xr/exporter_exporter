@@ -12,4 +12,8 @@ RUN go mod download ;\
 # Using nonroot variant for slightly better security posture
 FROM gcr.io/distroless/static-debian12:nonroot AS runtime
 COPY --from=build /go/src/exporter_exporter/exporter_exporter /exporter_exporter
+
+# Expose the default port used by exporter_exporter
+EXPOSE 9999
+
 ENTRYPOINT [ "/exporter_exporter" ]

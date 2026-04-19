@@ -46,3 +46,8 @@ release:
 test-race:
 	echo ">> running tests with race detector"
 	$(GO) test -race $(pkgs)
+
+# Run all checks before committing
+.PHONY: check
+check: vet test-static test
+	echo ">> all checks passed"

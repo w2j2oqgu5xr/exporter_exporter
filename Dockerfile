@@ -18,4 +18,7 @@ EXPOSE 9999
 
 # Default config path can be overridden at runtime, e.g.:
 #   docker run -v /path/to/expexp.yaml:/etc/expexp.yaml <image> --config.file=/etc/expexp.yaml
+#
+# Example with custom port:
+#   docker run -p 9998:9998 <image> --web.listen-address=:9998
 ENTRYPOINT [ "/exporter_exporter" ]

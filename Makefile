@@ -40,3 +40,9 @@ build:
 .PHONY: release
 release:
 	go run github.com/goreleaser/goreleaser@latest release
+
+# Run tests with race detector enabled
+.PHONY: test-race
+test-race:
+	echo ">> running tests with race detector"
+	$(GO) test -race $(pkgs)
